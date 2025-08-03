@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Test</title>
+</head>
+<body>
+    <div class="slot-square" id="slot1">
+        <div class="slot-items"></div>
+        <div class="slot-reel" style="position: absolute; left: -9999px;">
+            <div class="slot-item"><img src="map/1.jpg" alt="1"></div>
+            <div class="slot-item"><img src="map/2.jpg" alt="2"></div>
+            <div class="slot-item"><img src="map/3.jpg" alt="3"></div>
+        </div>
+    </div>
+    
+    <script>
+        const slot = document.getElementById('slot1');
+        const reel = slot.querySelector('.slot-reel');
+        const items = Array.from(reel ? reel.querySelectorAll('.slot-item') : []);
+        
+        console.log('Slot found:', !!slot);
+        console.log('Reel found:', !!reel);
+        console.log('Items count:', items.length);
+        console.log('Reel display style:', window.getComputedStyle(reel).display);
+        console.log('Reel position:', window.getComputedStyle(reel).position);
+    </script>
+</body>
+</html>
